@@ -6,6 +6,20 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World!</title>
+        <script type="text/javascript" charset="utf-8">
+            // Wait for device API libraries to load
+            //
+            document.addEventListener("deviceready", onDeviceReady, false);
+            // device APIs are available
+            //
+            function onDeviceReady() {
+                //var ref = window.open('http://apache.org', '_blank', 'location=yes');
+                //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+                //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+                //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+                //ref.addEventListener('exit', function(event) { alert(event.type); });
+            }
+        </script>
     </head>
     <body>
         
@@ -15,15 +29,16 @@
             app.initialize();
         </script>
         <div style="text-align:center">
-        	<video id="video1" width="640" controls>
+        	<video id="video1" width="320" poster=http://www.allenovery.com/SiteCollectionImages/New-site---News.jpg controls>
   				<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
   				Your browser does not support the video tag.
 			</video>
         </div>
         <div style="text-align:center">
-		  	<button onclick="makeSmall()">Small</button>
-		  	<button onclick="makeNormal()">Normal</button>
-            <button onclick="makeBig()">Big</button>
+		  	<!--button onclick="makeSmall()">Small</button-->
+		  	<!--button onclick="makeNormal()">Normal</button-->
+            <!--button onclick="makeBig()">Big</button-->
+            <button onClick="webSite()">Launch a URL in the app</button>
         </div>
         <script>
             var myVideo=document.getElementById("video1"); 
@@ -38,7 +53,11 @@
             function makeBig()
 			{ 
 				myVideo.width=1080; 
-			} 
+			}
+            function webSite()
+            {
+                var ref = window.open('http://www.allenovery.com', '_blank', 'location=no,enableViewportScale=yes,closebuttoncaption=Return to app');
+            }
         </script>
     </body>
 </html>
